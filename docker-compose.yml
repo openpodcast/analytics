@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   metabase:
-    image: metabase/metabase
+    image: metabase/metabase:v0.44.6
     container_name: openpodcast_metabase
     volumes:
       - metabase-data:/metabase-data
@@ -14,8 +14,8 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.persistent == extvoldb1      
- 
+          - node.labels.persistent == extvoldb1
+
 networks:
   inter-stack:
     external: true
